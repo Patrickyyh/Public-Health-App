@@ -86,7 +86,7 @@ const toggleMember = ()=>{
         navigate('/landing');
 
       } catch (error) {
-        setNewUser({...newUser, loginError: error.response.data.msg})
+          setNewUser({...newUser, loginError: error.response.data.msg})
           console.log(error.response.data.msg)
       }
 
@@ -286,7 +286,7 @@ const toggleMember = ()=>{
               <li
                 className={newPassWordWrong.hasSpclChr ? "text-success" : "text-danger"
                 }>
-                At least on of the special characters 
+                At least on of the special characters
               </li>
             </ul>
           </Form.Group>

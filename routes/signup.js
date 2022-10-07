@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 import validator from 'validator'
 import ValidationError from '../errors/validation-error.js'
-const bcrpyt = require('bcrypt')
+
 // controller for sign up
 const router = express.Router();
 router.post('/api/v1/auth/signup', async (req,res)=>{
@@ -34,12 +34,12 @@ router.post('/api/v1/auth/signup', async (req,res)=>{
         throw new ValidationError('Email already in User');
     }
 
-    try {
-        const salt = await bcrpyt.genSalt()
-        const hashedPassword = await bcrpyt.hash(password, salt)
-    } catch {
-        res.status(500).send()
-    }
+    // try {
+    //     const salt = await bcrpyt.genSalt()
+    //     const hashedPassword = await bcrpyt.hash(password, salt)
+    // } catch {
+    //     res.status(500).send()
+    // }
     //encrypt password
 
     //adding to database
